@@ -1,26 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <TranslateWrapper />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import { defineComponent, ref } from 'vue';
+import TranslateWrapper from './components/TranslateWrapper.vue';
 
-export default {
-  name: 'App',
+export default defineComponent({
   components: {
-    HelloWorld,
+    TranslateWrapper,
   },
-};
+  setup() {
+    const name = ref('Hisho');
+    return {
+      name,
+    };
+  },
+});
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+  font-family: 'Roboto', sans-serif;
 }
 </style>
